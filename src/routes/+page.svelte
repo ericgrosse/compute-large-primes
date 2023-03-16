@@ -1,5 +1,4 @@
 <script>
-
   // Verify whether an inputted number `num` is prime using  the Sieve of Eratosthenes algorithm
   function isPrime(num) {
     // Check for edge cases
@@ -118,11 +117,14 @@
     return primes;
   }
 
+  let timerStart = performance.now();
   let primeNumbers = sieveOfEratosthenes();
+  let timerEnd = performance.now();
   let allNumbersArePrime = true;
-  console.log('Array of 10 unverified prime numbers, each containing at least 5 digits:');
+  console.log('Array of ten prime numbers, each containing at least 5 digits:');
   console.log(primeNumbers);
-  console.log('Verifying if each candidate prime number is prime...');
+  console.log(`Prime number generation completed in ${timerEnd - timerStart}ms.`)
+  /*console.log('Verifying if each candidate prime number is prime...');
   
   for(let i = 0; i < primeNumbers.length; i++) {
     if(!isPrime(primeNumbers[i])) {
@@ -135,7 +137,7 @@
   }
   else {
     console.log('At least one of the 10 candidate prime numbers are not prime.');
-  }
+  }*/
 </script>
 
 <div class="app">
