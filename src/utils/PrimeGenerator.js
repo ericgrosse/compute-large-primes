@@ -32,7 +32,7 @@ const PrimeGenerator = {
     },
 
   // Sieve of Eratosthenes
-  sieveOfEratosthenes: function() {
+  sieveOfEratosthenes: function(numOfDigits) {
     const n = 100000; // limit for generating primes
     const primes = [];
     const sieve = new Array(n + 1).fill(true);
@@ -47,8 +47,8 @@ const PrimeGenerator = {
       }
     }
 
-    // filter out primes with fewer than 5 digits
-    return primes.filter(p => p.toString().length >= 5).slice(0, 10);
+    // filter out primes with fewer than numOfDigits digits
+    return primes.filter(p => p.toString().length >= numOfDigits).slice(0, 10);
   },
 
   // Fermat's Little Theorem
